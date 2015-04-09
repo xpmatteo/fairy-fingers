@@ -1,0 +1,35 @@
+
+
+Acceptance Tests
+
+ Single Finger
+
+ touch and drag finger: one line appears
+
+ dragFinger(10,10, 200,300)
+ assertLineAppears(10,10, 200,300, approximately(orange))
+ waitFor(1000)
+ assertScreenIsEmpty
+
+
+ Second line
+
+ touch and drag again; now we have two lines
+
+
+
+
+
+
+
+
+ Two fingers
+
+ Touch with one then two fingers
+ Two lines appear
+ Drag with the two fingers
+ the lines follow the fingers
+ Pull up one finger and drag the other
+ One line stops the other follows the finger
+
+

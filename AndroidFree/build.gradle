@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.6
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit-dep:4.11'
+    testCompile 'org.jmock:jmock-junit4:2.6.0'
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}

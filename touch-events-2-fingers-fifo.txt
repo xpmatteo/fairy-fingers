@@ -1,0 +1,36 @@
+
+Wow, now I pressed fingers this way:
+
+--------------
+   ---------------
+
+We have
+ACTION_DOWN
+ACTION_POINTER_DOWN(1)
+ACTION_POINTER_UP(0)
+
+now MOVE events have one pointer whose ID is 1
+
+ACTION_UP
+
+
+
+09-19 15:05:01.821  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_DOWN, id[0]=0, x[0]=360.1996, y[0]=185.6005, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=447497789, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.101  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=348.34644, y[0]=189.59552, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=447498107, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.922  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=268.82483, y[0]=229.54556, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=447498924, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.932  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=268.39084, y[0]=230.8057, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=447498941, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.942  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=266.39502, y[0]=230.54434, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=447498956, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.952  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_POINTER_DOWN(1), id[0]=0, x[0]=266.39502, y[0]=230.54434, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=367.18503, y[1]=444.27716, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=447498957, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:02.972  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=263.9002, y[0]=232.04248, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=367.18503, y[1]=444.27716, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=2, eventTime=447498974, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.532  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=218.4948, y[0]=255.51312, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=322.8333, y[1]=448.27216, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=3, eventTime=447499541, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.552  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=218.4948, y[0]=256.55014, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=322.2786, y[1]=448.27216, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=2, eventTime=447499557, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.572  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=218.4948, y[0]=257.49695, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=321.28067, y[1]=448.27216, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=1, eventTime=447499574, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.582  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=217.57312, y[0]=257.51062, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=320.28275, y[1]=448.27216, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=2, eventTime=447499591, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.602  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=216.49896, y[0]=257.51062, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=318.2869, y[1]=448.88788, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=4, eventTime=447499607, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.612  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=0, x[0]=216.49896, y[0]=257.51062, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=318.2869, y[1]=449.27094, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=447499609, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.612  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_POINTER_UP(0), id[0]=0, x[0]=216.49896, y[0]=257.51062, toolType[0]=TOOL_TYPE_FINGER, id[1]=1, x[1]=318.2869, y[1]=449.27094, toolType[1]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=2, historySize=0, eventTime=447499615, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.622  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=1, x[0]=316.49942, y[0]=449.27094, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=1, eventTime=447499624, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.903  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=1, x[0]=285.08832, y[0]=453.26593, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=3, eventTime=447499909, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:03.923  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=1, x[0]=283.09186, y[0]=453.26593, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=447499926, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:04.403  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_MOVE, id[0]=1, x[0]=231.96674, y[0]=471.74286, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=2, eventTime=447500404, downTime=447497789, deviceId=9, source=0x1002 }
+09-19 15:05:04.413  13133-13133/com.tdd4android.fairyfingers V/TOUCH-EVENT﹕ MotionEvent { action=ACTION_UP, id[0]=1, x[0]=231.96674, y[0]=471.74286, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=447500418, downTime=447497789, deviceId=9, source=0x1002 }
