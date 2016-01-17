@@ -2,13 +2,13 @@ package com.tdd4android.fairyfingers.core;
 
 import java.util.*;
 
-public class Line {
+public class Trail {
   private int color;
   private float startX;
   private float startY;
   private List<CorePoint> points = new ArrayList<CorePoint>();
 
-  public Line(int color, float x, float y) {
+  public Trail(int color, float x, float y) {
     this.color = color;
     this.startX = x;
     this.startY = y;

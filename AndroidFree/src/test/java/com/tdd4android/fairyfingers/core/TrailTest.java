@@ -7,13 +7,13 @@ import org.junit.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class LineTest {
+public class TrailTest {
   private final int COLOR = 0xFF123456;
 
   @Rule
   public JUnitRuleMockery context = new JUnitRuleMockery();
   private CoreCanvas coreCanvas = context.mock(CoreCanvas.class);
-  private Line line = new Line(COLOR, 10f, 20f);
+  private Trail trail = new Trail(COLOR, 10f, 20f);
 
 
   @Test
@@ -22,7 +22,7 @@ public class LineTest {
       never(coreCanvas);
     }});
 
-    line.drawOn(coreCanvas);
+    trail.drawOn(coreCanvas);
   }
 
   @Test
@@ -31,8 +31,8 @@ public class LineTest {
       oneOf(coreCanvas).drawLine(10f, 20f, 30f, 40f, COLOR, 255);
     }});
 
-    line.addPoint(30f, 40f);
-    line.drawOn(coreCanvas);
+    trail.addPoint(30f, 40f);
+    trail.drawOn(coreCanvas);
   }
 
   @Test
@@ -43,10 +43,10 @@ public class LineTest {
       oneOf(coreCanvas).drawLine(200f, 500f, 300f, 600f, COLOR, 255);
     }});
 
-    line.addPoint(100f, 400f);
-    line.addPoint(200f, 500f);
-    line.addPoint(300f, 600f);
-    line.drawOn(coreCanvas);
+    trail.addPoint(100f, 400f);
+    trail.addPoint(200f, 500f);
+    trail.addPoint(300f, 600f);
+    trail.drawOn(coreCanvas);
   }
 
   @Test
@@ -57,11 +57,11 @@ public class LineTest {
       oneOf(coreCanvas).drawLine(200f, 500f, 300f, 600f, COLOR, 255);
     }});
 
-    line.addPoint(100f, 400f);
-    line.decay();
-    line.addPoint(200f, 500f);
-    line.decay();
-    line.addPoint(300f, 600f);
-    line.drawOn(coreCanvas);
+    trail.addPoint(100f, 400f);
+    trail.decay();
+    trail.addPoint(200f, 500f);
+    trail.decay();
+    trail.addPoint(300f, 600f);
+    trail.drawOn(coreCanvas);
   }
 }

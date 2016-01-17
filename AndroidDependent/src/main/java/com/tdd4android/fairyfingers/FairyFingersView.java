@@ -37,8 +37,8 @@ public class FairyFingersView extends View {
         canvas.drawLine(startX, startY, stopX, stopY, paint);
       }
     };
-    for (Line line : core.lines()) {
-      line.drawOn(coreCanvas);
+    for (Trail trail : core.trails()) {
+      trail.drawOn(coreCanvas);
     }
   }
 

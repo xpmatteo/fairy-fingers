@@ -9,24 +9,24 @@ public class FairyFingersCoreTest {
 
   @Test
   public void noLinesAtStart() throws Exception {
-    assertEquals(0, core.lines().size());
+    assertEquals(0, core.trails().size());
   }
 
   @Test
   public void startOneLine() throws Exception {
     core.onFingerDown(0, 10.0f, 100.0f);
 
-    assertEquals(1, core.lines().size());
-    assertEquals("(10.0,100.0)", core.lines(0).toString());
+    assertEquals(1, core.trails().size());
+    assertEquals("(10.0,100.0)", core.trails(0).toString());
   }
 
   @Test
-  public void oneLineDownMove() throws Exception {
+  public void oneFingerDownThenMove() throws Exception {
     core.onFingerDown(0, 10.0f, 110.0f);
     core.onFingerMove(0, 20.0f, 120.0f);
     core.onFingerMove(0, 30.0f, 130.0f);
 
-    assertEquals("(10.0,110.0)->(20.0,120.0)->(30.0,130.0)", core.lines(0).toString());
+    assertEquals("(10.0,110.0)->(20.0,120.0)->(30.0,130.0)", core.trails(0).toString());
   }
 
   @Test
@@ -36,8 +36,8 @@ public class FairyFingersCoreTest {
     core.onFingerMove(0, 30.0f, 130.0f);
     core.onFingerUp(0);
 
-    assertEquals(1, core.lines().size());
-    assertEquals("(10.0,100.0)->(20.9,120.0)->(30.0,130.0)", core.lines(0).toString());
+    assertEquals(1, core.trails().size());
+    assertEquals("(10.0,100.0)->(20.9,120.0)->(30.0,130.0)", core.trails(0).toString());
   }
 
   @Test
@@ -50,8 +50,8 @@ public class FairyFingersCoreTest {
     core.onFingerMove(0, 220.0f, 320.0f);
     core.onFingerUp(0);
 
-    assertEquals("(10.0,110.0)->(20.0,120.0)", core.lines(0).toString());
-    assertEquals("(210.0,310.0)->(220.0,320.0)", core.lines(1).toString());
+    assertEquals("(10.0,110.0)->(20.0,120.0)", core.trails(0).toString());
+    assertEquals("(210.0,310.0)->(220.0,320.0)", core.trails(1).toString());
   }
 
   @Test
@@ -68,9 +68,9 @@ public class FairyFingersCoreTest {
     core.onFingerMove(1, 500f, 600f);
     core.onFingerUp(1);
 
-    assertEquals(2, core.lines().size());
-    assertEquals("(1.0,2.0)->(3.0,4.0)->(5.0,6.0)", core.lines(0).toString());
-    assertEquals("(100.0,200.0)->(300.0,400.0)->(500.0,600.0)", core.lines(1).toString());
+    assertEquals(2, core.trails().size());
+    assertEquals("(1.0,2.0)->(3.0,4.0)->(5.0,6.0)", core.trails(0).toString());
+    assertEquals("(100.0,200.0)->(300.0,400.0)->(500.0,600.0)", core.trails(1).toString());
   }
 
   @Test
@@ -79,7 +79,7 @@ public class FairyFingersCoreTest {
     core.onFingerMove(0, 20.0f, 120.0f);
     core.onFingerUp(0);
 
-    assertEquals(1, core.lines().size());
+    assertEquals(1, core.trails().size());
 
     halfDecay();
 
@@ -87,15 +87,15 @@ public class FairyFingersCoreTest {
     core.onFingerMove(0, 200.0f, 120.0f);
     core.onFingerUp(0);
 
-    assertEquals(2, core.lines().size());
+    assertEquals(2, core.trails().size());
 
     halfDecay();
 
-    assertEquals(1, core.lines().size());
+    assertEquals(1, core.trails().size());
 
     halfDecay();
 
-    assertEquals(0, core.lines().size());
+    assertEquals(0, core.trails().size());
   }
 
   private void halfDecay() {

@@ -3,8 +3,8 @@ package com.tdd4android.fairyfingers.core;
 import java.util.*;
 
 public class FairyFingersCore implements FingerEventTarget {
-  private Map<Integer, Line> openLines = new HashMap<Integer, Line>();
-  private List<Line> closedLines = new ArrayList<Line>();
+  private Map<Integer, Trail> openTrails = new HashMap<Integer, Trail>();
+  private List<Trail> closedTrails = new ArrayList<Trail>();
   private ColorSequence colors;
 
   public FairyFingersCore(ColorSequence colors) {
@@ -12,53 +12,53 @@ public class FairyFingersCore implements FingerEventTarget {
   }
 
   public void onFingerMove(int pointerId, float x, float y) {
-    Line line = openLines.get(pointerId);
-    line.addPoint(x, y);
+    Trail trail = openTrails.get(pointerId);
+    trail.addPoint(x, y);
   }
 
   public void onFingerUp(int pointerId) {
-    Line line = removeOpenLine(pointerId);
-    closedLines.add(line);
+    Trail trail = removeOpenLine(pointerId);
+    closedTrails.add(trail);
   }
 
   public void onFingerDown(int fingerId, float x, float y) {
-    openLines.put(fingerId, new Line(newColor(), x, y));
+    openTrails.put(fingerId, new Trail(newColor(), x, y));
   }
 
   private int newColor() {
     return colors.next();
   }
 
-  public List<Line> lines() {
-    List<Line> lines = new ArrayList<Line>();
-    lines.addAll(closedLines);
-    lines.addAll(openLines.values());
-    return lines;
+  public List<Trail> trails() {
+    List<Trail> trails = new ArrayList<Trail>();
+    trails.addAll(closedTrails);
+    trails.addAll(openTrails.values());
+    return trails;
   }
 
   private void deleteEmptyLines() {
-    for (Iterator<Line> it = closedLines.iterator(); it.hasNext(); ) {
-      Line line = it.next();
-      if (line.emptyLine()) {
+    for (Iterator<Trail> it = closedTrails.iterator(); it.hasNext(); ) {
+      Trail trail = it.next();
+      if (trail.emptyLine()) {
         it.remove();
       }
     }
   }
 
-  public Line lines(int index) {
-    return lines().get(index);
+  public Trail trails(int index) {
+    return trails().get(index);
   }
 
-  private Line removeOpenLine(int pointerId) {
-    Line line = openLines.remove(pointerId);
-    if (null == line)
-      throw new IllegalStateException("Could not find open line with id " + pointerId);
-    return line;
+  private Trail removeOpenLine(int pointerId) {
+    Trail trail = openTrails.remove(pointerId);
+    if (null == trail)
+      throw new IllegalStateException("Could not find open trail with id " + pointerId);
+    return trail;
   }
 
   public void decay() {
-    for (Line line : lines()) {
-      line.decay();
+    for (Trail trail : trails()) {
+      trail.decay();
     }
     deleteEmptyLines();
   }
