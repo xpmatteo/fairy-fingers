@@ -11,7 +11,7 @@ public class FairyFingersView extends View {
   private Paint paint = new Paint();
   private ColorSequence colors = new SummerPalette();
   private FairyFingersCore core = new FairyFingersCore(colors);
-  private CoreMotionEvent e = new CoreMotionEvent();
+  private CoreMotionEvent coreMotionEvent = new CoreMotionEvent();
 
   public FairyFingersView(Context context) {
     super(context);
@@ -44,12 +44,12 @@ public class FairyFingersView extends View {
 
   @Override
   public boolean onTouchEvent(final MotionEvent event) {
-    e.resetEvent(event.getActionMasked(), event.getActionIndex());
+    coreMotionEvent.resetEvent(event.getActionMasked(), event.getActionIndex());
 
     for (int i = 0; i < event.getPointerCount(); i++) {
-      e.addPointer(event.getPointerId(i), event.getX(i), event.getY(i));
+      coreMotionEvent.addPointer(event.getPointerId(i), event.getX(i), event.getY(i));
     }
-    e.deliverEventTo(core);
+    coreMotionEvent.deliverEventTo(core);
     invalidate();
     return true;
   }
